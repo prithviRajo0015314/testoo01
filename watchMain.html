@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .flashscreen {
+            position: absolute;
+            width: 1350px;
+            height: 640px;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(90deg, #DA3068, #14469F);
+            display: block;
+        }
+
+        @keyframes aniflash {
+            0% {
+                opacity: 0.2;
+            }
+
+            10% {
+                opacity: 0.3;
+            }
+
+            20% {
+                opacity: 0.4;
+            }
+
+            30% {
+                opacity: 0.5;
+            }
+
+            40% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+
+            60% {
+                opacity: 0.8;
+            }
+
+            70% {
+                opacity: 0.9;
+            }
+
+            80% {
+                opacity: none;
+            }
+
+        }
+
+        .logo {
+            border-radius: 40px;
+            left: 400px;
+            top: 60px;
+            position: absolute;
+            box-shadow: 10px 10px 15px 0px black;
+            display: block;
+            opacity: none;
+            animation: aniflash 1.5s;
+        }
+
+        .mainbody {
+
+            display: block;
+            background: rgb(51, 51, 51);
+            position: absolute;
+            width: 1350px;
+            height: 640px;
+            display: none;
+        }
+
+        .page3 {
+            display: none;
+        }
+
+
+        .imgh {
+            position: absolute;
+            top: 10px;
+            border-radius: 10px;
+            left: 0px;
+            animation: watch 2s;
+        }
+
+        @keyframes watch {
+            0% {
+                left: -1000px
+            }
+
+            100% {
+                left: 0px
+            }
+        }
+
+        .title {
+            position: absolute;
+            left: 710px;
+            top: 50px;
+            color: white;
+            font-size: 40px;
+            font-family: 'Courier New', Courier, monospace;
+            animation: welto 2s;
+        }
+
+        @keyframes welto {
+            from {
+                left: -20px;
+            }
+
+            to {
+                left: 710px;
+            }
+        }
+
+        .titled {
+            position: absolute;
+            left: 1150px;
+            font-size: 40px;
+            top: 50px;
+            color: rgb(43, 193, 238);
+            font-family: 'Courier New', Courier, monospace;
+            animation: time 2.2s;
+        }
+
+        @keyframes time {
+            from {
+                top: -20px;
+            }
+
+            to {
+                top: 50px;
+            }
+        }
+
+        .titler {
+            position: absolute;
+            left: 970px;
+            font-size: 40px;
+            top: 50px;
+            color: rgb(238, 250, 71);
+            font-family: 'Courier New', Courier, monospace;
+            animation: orbit 2.2s;
+
+        }
+
+        @keyframes orbit {
+            from {
+                top: 1000px;
+            }
+
+            to {
+                top: 50px;
+            }
+        }
+
+        .abus {
+            color: rgb(186, 231, 101);
+            position: absolute;
+            left: 690px;
+            top: 195px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            animation: letter 2s;
+        }
+
+        .er {
+            color: white;
+            position: absolute;
+            left: 690px;
+            top: 260px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            ;
+            opacity: none;
+            animation: letter 2s;
+        }
+
+        @keyframes letter {
+            from {
+                opacity: 0.1;
+            }
+
+            to {
+                opacity: none;
+            }
+        }
+
+        .agree {
+            position: absolute;
+            left: 690px;
+            top: 500px;
+            background: #000;
+            border: none;
+            width: 30px;
+            color: grey;
+            height: 30px;
+            border-radius: 10px;
+            cursor: pointer;
+
+        }
+
+        .more:hover {
+            opacity: 0.5;
+            animation-name: bg 1s;
+            animation-duration: 1s;
+        }
+
+        @keyframes bg {
+            form {
+                font-size: 30px;
+            }
+
+            to {
+                font-size: 20px;
+            }
+        }
+
+        .ag {
+            position: absolute;
+            left: 740px;
+            top: 481px;
+            color: grey;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .more {
+            position: absolute;
+            left: 890px;
+            top: 560px;
+            color: rgb(255, 255, 255);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background: #000;
+            width: 200px;
+            font-size: 20px;
+            border: none;
+            border-radius: 20px;
+            padding: 10px;
+            height: auto;
+            cursor: pointer;
+        }
+
+
+
+        .navbar {
+            position: sticky 0px;
+            position: absolute;
+            height: 60px;
+            width: 99%;
+            top: 3px;
+            padding-top: 0px;
+            background: rgb(213, 218, 214);
+            border-radius: 10px;
+
+        }
+
+        .logo3pg {
+            position: absolute;
+            border-radius: 10px;
+            top: 5px;
+            left: 20px;
+        }
+
+        .name {
+            color: black;
+            position: absolute;
+            top: -3px;
+            left: 85px;
+        }
+
+        .list {
+            position: relative;
+            list-style-type: none;
+            display: inline;
+            float: right;
+            margin-right: 30px;
+            color: black;
+            top: 4px;
+            font-size: 20px;
+
+
+        }
+
+        .list:hover {
+            opacity: 0.6;
+            color: blue;
+        }
+
+        .links {
+            text-decoration: none;
+            color: black;
+
+        }
+
+        .links:hover {
+            color: blue;
+        }
+
+        .w1div {
+            position: absolute;
+            height: 550px;
+            top: 90px;
+            display: block;
+        }
+
+        .info1 {
+            position: absolute;
+            width: 980px;
+            top: 50px;
+            height: 500px;
+            left: 300px;
+            display: block;
+        }
+
+        .w1 {
+
+            position: absolute;
+            top: 100px;
+            left: 50px;
+            animation: w1fromleft 1s;
+        }
+
+        @keyframes w1fromleft {
+            from {
+                left: -50px;
+            }
+
+            to {
+                left: 50px;
+            }
+        }
+
+        .abw1 {
+            color: black;
+            position: absolute;
+            top: 40px;
+
+        }
+
+        .abw1fur {
+            position: absolute;
+            color: gray;
+            top: 100px;
+        }
+
+        .fullimg {
+
+            display: none;
+            background: #000;
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            top: 100px;
+            left: 400px;
+            border-radius: 30px;
+        }
+
+        .w1e {
+            position: absolute;
+            left: 150px;
+            top: 80px;
+
+        }
+
+        .bbtn {
+            position: relative;
+            color: rgb(255, 255, 255);
+            left: 20px;
+            top: 20px;
+            background: transparent;
+            border: none;
+            width: auto;
+            height: auto;
+        }
+
+        .btn_buynow {
+
+            position: absolute;
+            width: auto;
+            height: auto;
+            top: 270px;
+            background: #0059ff;
+            color: white;
+            left: 0px;
+            border: none;
+            font-size: 15px;
+            border-radius: 10px;
+            padding: 10px;
+
+        }
+
+        .btn_buynow:hover {
+            opacity: 0.5;
+        }
+
+        .add_to_cart {
+
+            position: absolute;
+            width: auto;
+            height: auto;
+            top: 270px;
+            background: #0059ff;
+            color: white;
+            left: 130px;
+            border: none;
+            font-size: 15px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .add_to_cart:hover {
+            opacity: 0.5;
+        }
+
+        .price_tag {
+            position: absolute;
+            top: 200px;
+            font-size: 20px;
+        }
+
+        .for_buy_details {
+            display: none;
+            position: absolute;
+            width: 980px;
+            top: 50px;
+            height: 500px;
+            left: 300px;
+            animation: for_buy_details 1s;
+        }
+
+        @keyframes for_buy_details {
+            from {
+                left: 1000px
+            }
+
+            to {
+                left: 300px;
+            }
+        }
+
+        .pdet {
+            position: absolute;
+            color: black;
+            font-family: sans-serif;
+        }
+
+        .wat_buy_det_more {
+            color: grey;
+            position: relative;
+            top: 100px;
+            list-style-type: none;
+            font-family: sans-serif;
+            word-spacing: 5px;
+            line-height: 35px;
+        }
+
+        .qty {
+            position: absolute;
+            top: 245px;
+            left: 90px;
+            width: 50px;
+            background: transparent;
+            border: solid grey 1px;
+            color: rgb(17, 16, 16);
+            height: 20px;
+            outline: none;
+            border-radius: 10px;
+            padding-left: 10px;
+            cursor: pointer;
+        }
+
+        .totalcost {
+            position: absolute;
+            width: 50px;
+            height: 30px;
+            top: 288px;
+            left: 115px;
+            color: grey;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .PAY_THROUGH {
+            position: absolute;
+            color: rgb(0, 0, 0);
+            top: 0px;
+            font-family: sans-serif;
+            left: 30px;
+            padding-left: 10px;
+
+        }
+        .paythrough{
+            position: absolute;
+            width: 600px;
+            padding-left: 20px;
+            height:550px;
+            left: 400px; 
+            top: 0px;
+            display: block;
+        }
+        .forpayoptions{
+            list-style-type: disc;
+            position: relative;
+            color:grey;
+            top:100px;
+            font-family: sans-serif;
+            word-spacing: 5px;
+            line-height: 35px;
+            left: 70px;
+            cursor: pointer;
+        }
+        .payu{
+            color:grey;
+            text-decoration: none;
+        }
+        .forpayoptions:hover{
+            font-size:20px;
+        }
+        .succesfully_purchased{
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 580px;
+            animation: com 1s;
+        }
+        .btnio{
+            position: absolute;
+            color: rgb(255, 255, 255);
+            left: -120px;
+            top: 70px;
+            background: rgb(12, 12, 12);
+            border: none;
+            width: auto;
+            padding: 5px;
+            font-size: 15px;
+            border-radius: 10px;
+            height: auto;
+        }
+        @keyframes com {
+            from{left: 1080px;}
+            to{left: 580px;}
+        }
+    </style>
+
+    <div id="flashscreen" class="flashscreen">
+        <img id="logo" class="logo" src="./logo.webp" alt="logo" width="500px" height="500px">
+    </div>
+
+    <div id="mainbody" class="mainbody">
+
+        <img id="facewatch" class="imgh" src="./watchmain.avif" alt="img">
+        <h1 id="title" class="title"> WELCOME TO</h1>
+        <h1 id="para" class="titler">ORBITAL</h1>
+        <h1 id="para" class="titled">TIME</h1>
+        <h2 id="para" class="abus">About Us:</h2>
+        <h3 id="para" class="er">Lorem ipsum dolor sit amet consectetur adip
+            isicing elit. Hic, repellendus!
+            amet, consectetur adipisicing elit. Aut tenetur placeat officia quaerat.
+            Pariatur sit culpa laboriosam Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            soluta corporis nulla nobis, reprehenderit qui commodi veniam cupiditate cumque
+            vel, inventore magni pariatur nam incidunt autem alias excepturi.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, fugit!numquam </h3>
+
+        <input id="btn" class="agree" type="button" value="OK" onclick="press()">
+        <h3 id="ag" class="ag">I accept the terms and conditions.</h3>
+        <input type="button" class="more" id="start" value="Let's Start!">
+    </div>
+
+
+
+
+    <div id="page3" class="page3">
+
+
+        <div id="navbar" class="navbar">
+            <img class="logo3pg" src="./logoe.jpg" alt="logo" width="50px" height="50px">
+
+            <h2 class="name">ORBLTAL TIME</h2>
+            <ul class="fullinks">
+                <li class="list"> <a href="#" class="links">HELP ?</a></li>
+                </a>
+                <li class="list"> <a href="#" class="links">FILTER</a></li>
+                </a>
+                <li class="list"> <a href="#" class="links">CATEGORY</a></li>
+                </a>
+                <li class="list"> <a href="#" class="links">ABOUT</a></li>
+                </a>
+                <li class="list"> <a href="#" class="links">HOME</a></li>
+            </ul>
+        </div><br>
+        <div id="w1div" class="w1div">
+
+
+            <img id="w1img" class="w1" src="./w1.png" alt="logo" width="200px" height="330px" onclick="fullimg()">
+
+            <div id="info1" class="info1">
+                <h2 class="abw1">HAMPDEN S34 WATCH</h2>
+                <h3 class="abw1fur">The Dueber-Hampden Watch Company was an American
+                    watch manufacturing company.1 In 1888 the Dueber Watch Case Company
+                    operating in Cincinnati from 1864 bought the Hampden Watch Company of New York,
+                    in operation since 1877.</h3>
+                <h2 class="price_tag">PRICE:6999/-only limited edition</h2>
+
+                <button class="btn_buynow" onclick="btn_buynow()">BUY NOW</button>
+               <input type="button" id="add_to_cart" class="add_to_cart"  onclick="add_to_cart()" value="ADD TO CART">
+            </div>
+            <div id="for_buy_details" class="for_buy_details">
+                <h1 class="pdet">PURCHASE DETAILS</h1>
+                <li class="wat_buy_det_more">WATCH NAME : HAMPDEN S34 WATCH</li>
+                <li class="wat_buy_det_more">WATCH MANUFACTURING-DATE : 01/09/2024</li>
+                <li class="wat_buy_det_more">MODEL NUMBER : 028028893803</li>
+                <li class="wat_buy_det_more">PRICE FOR 1QTY : 6999/-</li>
+                <li class="wat_buy_det_more">QUANTITY:</li>
+                <input id="qty" class="qty" type="number" value="1">
+                <li class="wat_buy_det_more">WARRANTY: 3 years</li>
+                <li class="wat_buy_det_more">TOTAL COST : </li>
+                <div id="totalcost" class="totalcost">
+                    <h3>6999/-</h3>
+                    <button  id="btnio" class="btnio" onclick="backto_info1()">Back</button>
+
+                </div>
+                <div  id="paythrough" class="paythrough">
+                <h1 class="PAY_THROUGH">PAY OPTIONS</h1>
+                         <li class="forpayoptions" onclick="completed()">cash on delivery. </li>
+                         <li class="forpayoptions" onclick="completed()"> credit card. </li>
+                         <li class="forpayoptions" onclick="completed()"> debit card. </li>
+                         <li class="forpayoptions" onclick="completed()"> mobile banking. </li>
+            </div>
+                      <div id="succesfully_purchased" class="succesfully_purchased"> 
+                        <img src="./tick.webp" alt="logo" height="280px" width="300px">
+                      </div>
+            </div>
+        </div>
+        <div id="fullimg" class="fullimg"> <img id="w1imge" class="w1e" src="./w1.png" alt="logo" width="200px"
+                height="330px">
+            <button class="bbtn" onclick="backtopage3()">BACK</button>
+        </div>
+    </div>
+
+    <script src="jsw.js"></script>
+</body>
+
+</html>
+
+<!-- // flashscreen for flashscreen
+// mainbody for terms and condition
+// page3 for actuall web page  -->
